@@ -12,7 +12,6 @@ export const saveLocalData = (result: Result): void => {
   const results: Result[] = getLocalData()
   const index: number = binarySearch(results.map(({ score }) => +score), +result.score, 0, results.length)
   const newResults: Result[] = insertIntoArray(results, index, result)
-  console.log(results, newResults)
   localStorage.setItem(key, JSON.stringify(newResults))
 }
 

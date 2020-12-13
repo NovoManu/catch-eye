@@ -1,5 +1,3 @@
-import { Result } from '@/types'
-
 export const binarySearch = (array: number[], number: number, start: number, end: number): number => {
   if (array.length && array[0] > number) return 0
   if (array[array.length] < number) return array.length

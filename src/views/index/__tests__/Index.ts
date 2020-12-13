@@ -11,9 +11,9 @@ describe('test Index.vue', () => {
       }
     })
     expect(wrapper.exists()).toBeTruthy()
-    const rootElement = wrapper.find('.start-block')
+    const rootElement = wrapper.find('.start')
     expect(rootElement.exists()).toBeTruthy()
-    const button = wrapper.find('.start-block__button')
+    const button = wrapper.find('.start__button')
     expect(button.text()).toBe('Start game')
   })
 })
