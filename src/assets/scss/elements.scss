@@ -1,0 +1,24 @@
+$box-width: 600px;
+$box-height: 600px;
+$box-background: $white;
+$box-radius: $radius-large;
+$box-padding: $size-5;
+
+$title-size: $size-2;
+
+%box {
+  width: $box-width;
+  max-width: 100%;
+  height: $box-height;
+  max-height: 100%;
+  padding: $box-padding;
+  margin: auto;
+  border-radius: $box-radius;
+  background-color: $box-background;
+  box-shadow: $box-shadow;
+}
+
+%title {
+  padding-bottom: $size-7;
+  font-size: $title-size;
+}

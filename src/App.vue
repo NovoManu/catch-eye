@@ -1,7 +1,15 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <AppLayout>
+    <router-view />
+  </AppLayout>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import AppLayout from '@/layouts/AppLayout.vue'
+
+export default defineComponent({
+  name: 'App',
+  components: { AppLayout }
+})
+</script>
