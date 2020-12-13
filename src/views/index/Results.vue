@@ -8,6 +8,7 @@
         <span>{{ score }}</span>
       </div>
     </div>
+    <div v-if="!topResults.length" class="results__no-results">No results yet</div>
     <div class="results__action">
       <button class="results__button" @click="$router.push('/')">Home</button>
       <button class="results__button" @click="$router.push('/game')">New Game</button>
@@ -75,6 +76,9 @@ export default defineComponent({
     &:hover {
       background-color: rgba($blue, 0.2);
     }
+  }
+  &__no-results {
+    text-align: center;
   }
 }
 </style>
