@@ -1,4 +1,5 @@
-import { binarySearch, insertIntoArray } from '../helpers'
+import { binarySearch, insertIntoArray, scheduleChecker } from '../helpers'
+import moment from 'moment'
 
 describe('test helpers functions', () => {
   it('test binarySearch', () => {
@@ -62,5 +63,27 @@ describe('test helpers functions', () => {
     newArray = insertIntoArray(newArray, index, anotherValue)
     expect(newArray.length).toBe(6)
     expect(newArray[5].val).toBe(anotherValue.val)
+  })
+
+  it('test scheduleChecker', () => {
+    const appointments = [{ start: '1200', end: '1300' }, { start: '1540', end: '1710' }]
+    let bookings = [{ start: '1320', end: '1400' }, { start: '1400', end: '1500' }]
+
+    let slots = scheduleChecker(appointments, bookings)
+    expect(slots.length).toBe(2)
+    expect(slots[0].start).toBe('1320')
+    expect(slots[0].end).toBe('1400')
+    expect(slots[1].start).toBe('1400')
+    expect(slots[1].end).toBe('1500')
+
+    bookings = [{ start: '1220', end: '1400' }, { start: '1400', end: '1600' }]
+    slots = scheduleChecker(appointments, bookings)
+    expect(slots.length).toBe(0)
+
+    bookings = [{ start: '1000', end: '1200' }, { start: '1500', end: '1600' }]
+    slots = scheduleChecker(appointments, bookings)
+    expect(slots.length).toBe(1)
+    expect(slots[0].start).toBe('1000')
+    expect(slots[0].end).toBe('1200')
   })
 })

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "moment": "^2.29.1",
     "vue": "^3.0.0",
     "vue-automatic-router": "^2.0.1"
   },
